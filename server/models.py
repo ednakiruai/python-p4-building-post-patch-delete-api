@@ -22,6 +22,7 @@ class Game(db.Model, SerializerMixin):
     updated_at = db.Column(db.DateTime, onupdate=db.func.now())
 
     reviews = db.relationship('Review', backref='game')
+    
 
     def __repr__(self):
         return f'<Game {self.title} for {self.platform}>'
